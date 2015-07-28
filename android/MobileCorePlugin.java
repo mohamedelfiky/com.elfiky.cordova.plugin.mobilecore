@@ -17,6 +17,8 @@ public class MobileCorePlugin extends CordovaPlugin {
 
         if (ACTION_SHOW_INTERSTITIAL_ADD.equals(action)) {
             Log.v("MobileCore test","test");
+
+            callbackContext.success("sucess");
             return true;
         }
         else {
