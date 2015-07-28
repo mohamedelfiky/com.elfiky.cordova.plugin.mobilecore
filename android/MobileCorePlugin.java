@@ -1,7 +1,7 @@
 package com.elfiky.cordova.plugin.mobilecore;
 
-import org.apache.cordova.api.CallbackContext;
-import org.apache.cordova.api.CordovaPlugin;
+
+import org.apache.cordova.*;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -13,7 +13,7 @@ public class MobileCorePlugin extends CordovaPlugin {
 
 
     @Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+    public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 
         if (ACTION_SHOW_INTERSTITIAL_ADD.equals(action)) {
             Log.v("MobileCore test","test");
