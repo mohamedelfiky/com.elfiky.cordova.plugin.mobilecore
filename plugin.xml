@@ -20,8 +20,8 @@
     <platform name="android">
 
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="mobilecore">
-                <param name="android-package" value="com.elfiky.cordova.plugin.mobilecore"/>
+            <feature name="MobileCorePlugin">
+                <param name="android-package" value="com.elfiky.cordova.plugin.mobilecore.MobileCorePlugin"/>
             </feature>
         </config-file>
 
