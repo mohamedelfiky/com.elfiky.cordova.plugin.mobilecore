@@ -7,7 +7,7 @@ var mobileCore = {
     cordova.exec(
       successCallback, // success callback function
       errorCallback, // error callback function
-      'com.elfiky.cordova.plugin.mobilecore.MobileCorePlugin', // mapped to our native Java class called "MobileCorePlugin"
+      'MobileCorePlugin', // mapped to our native Java class called "MobileCorePlugin"
       'show_interstitial', // with this action name
       []
     );
