@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
         id="com.elfiky.cordova.plugin.mobilecore"
-        version="0.1.0">
+        version="0.2.0">
 
-  <name>MobileCorePlugin</name>
+    <name>MobileCorePlugin</name>
 
-  <engines>
-    <engine name="cordova" version=">=3.4.0"/>
-  </engines>
+    <engines>
+        <engine name="cordova" version=">=3.4.0"/>
+    </engines>
 
-  <asset src="js/mobile_core.js" target="js/mobile_core.js"/>
+    <asset src="js/mobile_core.js" target="js/mobile_core.js"/>
 
-  <js-module src="js/mobile_core.js" name="mobileCore">
-    <clobbers target="mobileCore" />
-  </js-module>
+    <js-module src="js/mobile_core.js" name="mobileCore">
+        <clobbers target="mobileCore"/>
+    </js-module>
 
-  <platform name="android">
-    <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="MobileCorePlugin">
-        <param name="android-package" value="com.elfiky.cordova.plugin.mobilecore"/>
-      </feature>
-    </config-file>
+    <platform name="android">
 
-    <source-file src="android/MobileCorePlugin.java" target-dir="src/com/elfiky/cordova/plugin/mobilecore/"/>
-  </platform>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="MobileCorePlugin">
+                <param name="android-package" value="com.elfiky.cordova.plugin.mobilecore"/>
+            </feature>
+        </config-file>
+
+        <source-file src="android/MobileCorePlugin.java" target-dir="src/com/elfiky/cordova/plugin/mobilecore/" />
+        <source-file src="android/mobilecore.jar" target-dir="libs" />
+
+    </platform>
 
 </plugin>
