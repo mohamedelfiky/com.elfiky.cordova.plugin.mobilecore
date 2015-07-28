@@ -28,6 +28,33 @@
         <source-file src="android/MobileCorePlugin.java" target-dir="src/com/elfiky/cordova/plugin/mobilecore/" />
         <source-file src="android/mobilecore.jar" target-dir="libs" />
 
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity
+                    android:name="com.ironsource.mobilcore.InterstitialVideoActivity"> </activity>
+
+
+            <service
+                    android:name="com.ironsource.mobilcore.MobileCoreReport"
+                    android:enabled="true"
+                    android:exported="false"
+                    android:process=":mcServiceProcess" />
+
+            <receiver
+                    android:name="com.ironsource.mobilcore.InstallationTracker"
+                    android:enabled="true"
+                    android:process=":installationTracker" />
+        </config-file>
+
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <!--mobileCore SDK will fetch ads only if network connection is available. -->
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <!--will make sure the screen doesn’t turn off while the user is watching a video ad (only). -->
+            <uses-permission android:name="android.permission.WAKE_LOCK" />
+        </config-file>
     </platform>
 
 </plugin>
