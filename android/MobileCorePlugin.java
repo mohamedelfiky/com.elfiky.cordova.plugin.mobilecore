@@ -6,8 +6,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import com.ironsource.mobilcore.MobileCore;
+import com.ironsource.mobilcore.OnReadyListener;
 import com.ironsource.mobilcore.MobileCore.AD_UNITS;
 import com.ironsource.mobilcore.MobileCore.LOG_TYPE;
+
 import android.util.Log;
 
 public class MobileCorePlugin extends CordovaPlugin {
@@ -110,8 +112,16 @@ public class MobileCorePlugin extends CordovaPlugin {
 							LOG_TYPE.DEBUG, AD_UNITS.STICKEEZ,
 							AD_UNITS.INTERSTITIAL, AD_UNITS.DIRECT_TO_MARKET,
 							AD_UNITS.NATIVE_ADS);
-					MobileCore.directToMarket(cordova.getActivity());
-					Log.v(TAG, "Show mobilecore direct To Market ad ");
+
+					MobileCore.setDirectToMarketReadyListener(new OnReadyListener() {
+						@Override
+						public void onReady(AD_UNITS arg0) {
+							MobileCore.directToMarket(cordova.getActivity());
+
+							Log.v(TAG, "Show mobilecore direct To Market ad ");
+						}
+					});
+					
 				} catch (Exception ex) {
 					Log.e(TAG, "error error error error ");
 					Log.e(TAG, ex.getMessage());
