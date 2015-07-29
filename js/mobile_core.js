@@ -28,7 +28,20 @@ var mobileCore = function(dev_hash){
           dev_hash: dev_hash
         }]
       );
+    },
+
+    showDirectToMarket: function (successCallback, errorCallback) {
+      cordova.exec(
+        successCallback, // success callback function
+        errorCallback, // error callback function
+        'MobileCorePlugin', // mapped to our native Java class called "MobileCorePlugin"
+        'show_direct_to_market', // with this action name
+        [{
+          dev_hash: dev_hash
+        }]
+      );
     }
+
 
   };
 

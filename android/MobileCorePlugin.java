@@ -14,6 +14,7 @@ public class MobileCorePlugin extends CordovaPlugin {
 
 	public static final String ACTION_SHOW_INTERSTITIAL_AD = "show_interstitial";
 	public static final String ACTION_SHOW_STICKEE_AD = "show_stickee";
+	public static final String ACTION_DIRECT_TO_MARKET = "show_direct_to_market";
 
 	private final String TAG = "mobilecore_log";
 
@@ -34,6 +35,11 @@ public class MobileCorePlugin extends CordovaPlugin {
 		}else if(ACTION_SHOW_STICKEE_AD.equals(action)){
 			JSONObject options = data.optJSONObject(0);
 			executeCreateStickeeView(options, callbackContext);
+		}else if (ACTION_DIRECT_TO_MARKET.equals(action)) {
+			JSONObject options = data.optJSONObject(0);
+			executeDirectToMarketView(options, callbackContext);
+			
+			return true;
 		}
 
 		return true;
@@ -51,7 +57,7 @@ public class MobileCorePlugin extends CordovaPlugin {
 							LOG_TYPE.DEBUG, AD_UNITS.STICKEEZ,
 							AD_UNITS.INTERSTITIAL, AD_UNITS.DIRECT_TO_MARKET,
 							AD_UNITS.NATIVE_ADS);
-					MobileCore.showInterstitial(cordova.getActivity(), null);
+					MobileCore.directToMarket(cordova.getActivity());
 
 					Log.v(TAG, "Show mobilecore ad Interstitial");
 				} catch (Exception ex) {
@@ -93,6 +99,30 @@ public class MobileCorePlugin extends CordovaPlugin {
 		return null;
 	}
 
+	private PluginResult executeDirectToMarketView(JSONObject options,
+			final CallbackContext callbackContext) {
+		this.setOptions(options);
+		cordova.getActivity().runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					MobileCore.init(cordova.getActivity(), dev_hash, null,
+							LOG_TYPE.DEBUG, AD_UNITS.STICKEEZ,
+							AD_UNITS.INTERSTITIAL, AD_UNITS.DIRECT_TO_MARKET,
+							AD_UNITS.NATIVE_ADS);
+					MobileCore.directToMarket(cordova.getActivity());
+					Log.v(TAG, "Show mobilecore direct To Market ad ");
+				} catch (Exception ex) {
+					Log.e(TAG, "error error error error ");
+					Log.e(TAG, ex.getMessage());
+				}
+
+				callbackContext.success();
+			}
+		});
+
+		return null;
+	}
 	
 	private void setOptions(JSONObject options) {
 		if (options == null)
