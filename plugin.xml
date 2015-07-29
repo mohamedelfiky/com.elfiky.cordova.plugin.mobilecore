@@ -29,8 +29,7 @@
         <source-file src="android/mobilecore.jar" target-dir="libs" />
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity
-                    android:name="com.ironsource.mobilcore.InterstitialVideoActivity"> </activity>
+            <activity android:configChanges="keyboardHidden|orientation|screenSize" android:keepScreenOn="true" android:name="com.ironsource.mobilcore.InterstitialVideoActivity" />
             <service
                     android:name="com.ironsource.mobilcore.MobileCoreReport"
                     android:enabled="true"
