@@ -7,22 +7,13 @@ import org.json.JSONException;
 
 import com.ironsource.mobilcore.MobileCore;
 import com.ironsource.mobilcore.MobileCore.AD_UNITS;
-import com.ironsource.mobilcore.MobileCore.AD_UNIT_SHOW_TRIGGER;
 import com.ironsource.mobilcore.MobileCore.LOG_TYPE;
-import com.ironsource.mobilcore.UserProperties;
-import com.ironsource.mobilcore.UserProperties.AgeRange;
-import com.ironsource.mobilcore.UserProperties.Gender;
-
-import android.os.AsyncTask;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.util.Log;
 
 public class MobileCorePlugin extends CordovaPlugin {
 
 	public static final String ACTION_SHOW_INTERSTITIAL_AD = "show_interstitial";
-	public static final String ACTION_SHOW_STICKEE_AD = "show_interstitial";
+	public static final String ACTION_SHOW_STICKEE_AD = "show_stickee";
 
 	private final String TAG = "mobilecore_log";
 
