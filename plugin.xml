@@ -31,8 +31,6 @@
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity
                     android:name="com.ironsource.mobilcore.InterstitialVideoActivity"> </activity>
-
-
             <service
                     android:name="com.ironsource.mobilcore.MobileCoreReport"
                     android:enabled="true"
