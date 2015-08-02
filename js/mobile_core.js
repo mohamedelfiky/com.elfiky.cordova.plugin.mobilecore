@@ -2,11 +2,9 @@
  * Created by elfiky on 28/07/15.
  */
 
-var mobileCore = function(dev_hash){
-  var _module = {
+  var mobileCore = {
 
-
-    showInterstitial: function (successCallback, errorCallback) {
+    showInterstitial: function (dev_hash, successCallback, errorCallback) {
       cordova.exec(
         successCallback, // success callback function
         errorCallback, // error callback function
@@ -18,7 +16,7 @@ var mobileCore = function(dev_hash){
       );
     },
 
-    showStickee: function (successCallback, errorCallback) {
+    showStickee: function (dev_hash,successCallback, errorCallback) {
       cordova.exec(
         successCallback, // success callback function
         errorCallback, // error callback function
@@ -30,7 +28,7 @@ var mobileCore = function(dev_hash){
       );
     },
 
-    showDirectToMarket: function (successCallback, errorCallback) {
+    showDirectToMarket: function (dev_hash,successCallback, errorCallback) {
       cordova.exec(
         successCallback, // success callback function
         errorCallback, // error callback function
@@ -44,9 +42,5 @@ var mobileCore = function(dev_hash){
 
 
   };
-
-
-  return _module;
-};
 
 module.exports = mobileCore;
