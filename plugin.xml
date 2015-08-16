@@ -49,8 +49,6 @@
             <uses-permission android:name="android.permission.READ_PHONE_STATE" />
             <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-            <!--will make sure the screen doesn’t turn off while the user is watching a video ad (only). -->
-            <uses-permission android:name="android.permission.WAKE_LOCK" />
         </config-file>
     </platform>
 
