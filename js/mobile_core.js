@@ -4,6 +4,18 @@
 
   var mobileCore = {
 
+    init: function (dev_hash, successCallback, errorCallback) {
+      cordova.exec(
+        successCallback, // success callback function
+        errorCallback, // error callback function
+        'MobileCorePlugin', // mapped to our native Java class called "MobileCorePlugin"
+        'init_mobile_core', // with this action name
+        [{
+          dev_hash: dev_hash
+        }]
+      );
+    },
+
     showInterstitial: function (dev_hash, successCallback, errorCallback) {
       cordova.exec(
         successCallback, // success callback function
