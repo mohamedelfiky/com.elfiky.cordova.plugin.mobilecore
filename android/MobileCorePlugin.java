@@ -11,7 +11,6 @@ import com.ironsource.mobilcore.MobileCore;
 import com.ironsource.mobilcore.OnReadyListener;
 import com.ironsource.mobilcore.MobileCore.AD_UNITS;
 import com.ironsource.mobilcore.MobileCore.LOG_TYPE;
-import com.mobilecore.phonegap.MobilecorePlugin;
 
 import android.util.Log;
 
