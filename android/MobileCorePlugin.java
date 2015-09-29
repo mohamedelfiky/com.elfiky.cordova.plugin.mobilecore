@@ -40,7 +40,7 @@ public class MobileCorePlugin extends CordovaPlugin implements CallbackResponse,
 			executeInit(options, callbackContext);
 		}else if(ACTION_SHOW_INTERSTITIAL_AD.equals(action)){
 			JSONObject options = data.optJSONObject(0);
-			executeCreateStickeeView(options, callbackContext);
+			executeCreateInterstitialView(options, callbackContext);
 		}else if(ACTION_SHOW_STICKEE_AD.equals(action)){
 			JSONObject options = data.optJSONObject(0);
 			executeCreateStickeeView(options, callbackContext);
