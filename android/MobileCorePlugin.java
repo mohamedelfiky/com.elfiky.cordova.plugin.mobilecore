@@ -59,7 +59,7 @@ public class MobileCorePlugin extends CordovaPlugin {
 							LOG_TYPE.DEBUG, AD_UNITS.STICKEEZ,
 							AD_UNITS.INTERSTITIAL, AD_UNITS.DIRECT_TO_MARKET,
 							AD_UNITS.NATIVE_ADS);
-					MobileCore.directToMarket(cordova.getActivity());
+					MobileCore.showInterstitial(cordova.getActivity(), MobilecorePlugin.this);
 
 					Log.v(TAG, "Show mobilecore ad Interstitial");
 				} catch (Exception ex) {
